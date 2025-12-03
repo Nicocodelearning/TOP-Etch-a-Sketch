@@ -4,24 +4,47 @@
 
 body {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3vmin;
+    align-items: stretch;
+    margin: 0;
 }
 
-.sizing {
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+p {
+    font-weight: 600;
+}
+
+.controls {
     display: flex;
-    gap: 2vmin;
-    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+    padding: 0 10px;
+
+}
+
+.sizingChoices {
+    padding-bottom: 30px;
+}
+
+.colors {
+    border-top: black solid 2px;
 }
 
 .gridContainer {
     border: black solid 2px;
     display: flex;
     flex-wrap: wrap;
-    width: 80vmin;
-    height: 80vmin;
+    width: 100vmin;
+    height: 100vmin;
+    flex: auto;
 }
 
 .gridCase {
@@ -45,6 +68,7 @@ button {
         0 0 0 1px rgba(255, 255, 255, 0.6) inset;
 
     transition: all 0.2s ease;
+    width: 210px;
 }
 
 button:hover {
@@ -55,6 +79,18 @@ button:hover {
 button:active {
     background: linear-gradient(#e5e5e5, #d5d5d5);
     transform: translateY(1px);
+}
+
+.colors button.active {
+    background: #3b82f6;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.colors button.active:hover {
+    background: #3b82f6;
+    transform: scale(1.05);
 }
 
 input[type="text"] {

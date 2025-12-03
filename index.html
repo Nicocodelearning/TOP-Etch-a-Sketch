@@ -10,11 +10,24 @@
 </head>
 
 <body>
-    <div class="sizing">
-        <p>Widht <input type="text" name="width" id="width" placeholder="16"></p>
-        <p>Height <input type="text" name="height" id="height" placeholder="16"></p>
-        <button class="modifyGrid">Modify Grid</button>
+    <div class="controls">
+        <h1> Odin's Etch a sketch</h1>
+        <div class="sizingChoices">
+            <h2>Size</h2>
+            <p>Width <input type="text" name="width" id="width" value="16"></p>
+            <p>Height <input type="text" name="height" id="height" value="16"></p>
+            <button class="modifyGrid">Modify Grid / Refresh</button>
+        </div>
+        <div class="colors">
+            <h2>Color</h2>
+            <ul>
+                <li><button id="rainbow">Rainbow</button></li>
+                <li><button id="color">Color</button></li>
+                <li><button id="erase">Erase</button></li>
+            </ul>
+        </div>
     </div>
+
     <div class="gridContainer"></div>
 
 </body>
