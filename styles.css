@@ -90,7 +90,9 @@ button:active {
 
 .colors button.active:hover {
     background: #3b82f6;
+    color: white;
     transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
 }
 
 input[type="text"] {

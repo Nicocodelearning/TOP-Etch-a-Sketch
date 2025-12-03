@@ -3,7 +3,14 @@ const gridContainer = document.querySelector(".gridContainer")
 let mouseDown = false
 document.body.onmousedown = () => mouseDown = true
 document.body.onmouseup = () => mouseDown = false
-
+let currentMode = "rainbow"
+document.querySelector("#rainbow").classList.add("active")
+const colorsButtons = document.querySelectorAll(".colors button")
+colorsButtons.forEach((btn) => btn.addEventListener("click", () => {
+    colorsButtons.forEach((b) => b.classList.remove("active"))
+    btn.classList.add("active")
+    currentMode = btn.id
+}))
 
 function createGrid(width, height) {
     if (!Number.isInteger(width) || !Number.isInteger(height)) {
@@ -21,7 +28,12 @@ function createGrid(width, height) {
         gridCase.style.width = `calc(100% / ${width})`
         gridCase.addEventListener("mouseenter", () => {
             if (mouseDown) {
-                gridCase.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+                if (currentMode === "rainbow") gridCase.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+                else if (currentMode === "erase") gridCase.style.backgroundColor = "white"
+                else {
+                    const chosenColor = document.querySelector("#colorPicker").value
+                    gridCase.style.backgroundColor = chosenColor
+                }
             }
         })
         gridContainer.appendChild(gridCase)
